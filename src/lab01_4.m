@@ -17,3 +17,17 @@ A = [0,      1,       0;
 B = [0; 
      0; 
      b0/a3];
+
+% Вывод данных в консоль
+fprintf('Параметры системы:\n');
+fprintf('a0 = %.2f\n', a0);
+fprintf('a1 = %.2f\n', a1);
+fprintf('a2 = %.2f\n', a2);
+fprintf('a3 = %.2f\n', a3);
+fprintf('b0 = %.2f\n\n', b0);
+
+fprintf('Матрица A:\n');
+disp(A);
+
+fprintf('Матрица B:\n');
+disp(B);
