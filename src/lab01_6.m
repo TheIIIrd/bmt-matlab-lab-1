@@ -51,3 +51,26 @@ grid on;                                                    % Включение
 xlabel('t');                                                % Подпись оси X
 ylabel('X_1, X_2');                                         % Подпись оси Y
 title('y = 2*sin(t), x0 = [0; 0; 0]');                      % Заголовок графика
+
+% Добавление легенды
+legend('x_1(t)', 'x_2(t)', 'Location', 'best');
+
+% Создание папки graphics, если она не существует
+folderName = 'graphics';
+if ~exist(folderName, 'dir')
+    mkdir(folderName);  % Создание папки
+    fprintf('Папка "%s" была создана.\n', folderName);
+
+else
+    fprintf('Папка "%s" уже существует.\n', folderName);
+end
+
+% Сохранение графика в формате PNG
+filePath = fullfile(folderName, 'plot_4.png'); % Полный путь к файлу
+try
+    saveas(gcf, filePath);
+    fprintf('График успешно сохранен в "%s".\n', filePath);
+
+catch ME
+    fprintf('Ошибка при сохранении графика: %s\n', ME.message);
+end
